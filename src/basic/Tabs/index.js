@@ -257,7 +257,7 @@ const ScrollableTabView = createReactClass({
   _handleLayout(e) {
     const { width } = e.nativeEvent.layout;
 
-    if (Math.round(width) !== Math.round(this.state.containerWidth)) {
+    if (Math.round(width) !== Math.round(this.state.containerWidth) && width !== 0) {
       this.setState({ containerWidth: width });
       this.requestAnimationFrame(() => {
         this.goToPage(this.state.currentPage);
